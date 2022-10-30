@@ -23,7 +23,11 @@ app.use(express.static(path.join(__dirname, "public")));
 // 1- Add DB config
 const db = require("./config/key").mongoURI;
 
+const users = require("./routes/api/users");
 
+
+
+app.use("/api/users", users);
 
 // Connect to MongoDB
 mongoose
